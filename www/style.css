@@ -1,0 +1,42 @@
+h4{
+  margin: 0px;
+}
+h2{
+  
+  display: block;
+  font-size: 1.5em;
+  margin-top: 0.83em;
+  margin-bottom: 0.83em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+}
+tfoot {
+  display:none;
+}
+.shiny-progress .progress {
+    position: absolute;
+    width: 100%;
+    top: 0px;
+    height: 20px;
+    margin: 0px;
+}
+
+header, section{
+  border: 0px solid grey;
+  margin: 5px;
+  padding: 4px;
+}
+
+.tabset{
+  font-size: 16pt;
+  font-style: italic;
+  text-decoration: underline;
+}
+
+.shiny-input-container{
+  margin: 4px;
+}
+
+
+
