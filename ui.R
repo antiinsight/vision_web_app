@@ -38,22 +38,29 @@ shinyUI(fluidPage(
       # upload Zebrabox spreadsheet
       fileInput('file', label=h4("Select Zebrabox Spreadsheet"), multiple=FALSE),
       
-      # select what rows to average
-      selectInput("row", label="Row Selection", choice = list("Row A" = 'A', "Row B" = 'B', "Row C" = 'C', "Row D" = 'D', "Row E" = 'E', "Row F" = 'F', "Row G" = 'G', "Row H" = 'H')),
+      conditionalPanel(
+        condition="input.conditionedPanels == 'Activity Plot'",
+            #response threshold setting
+            numericInput("threshold", label="Response Threshold", value=2.5),
       
-      #adjust Plot_A axis
-      sliderInput("xaxis", label=("Adjust Activity Plot Axis"), min=10, max=1950, value = c(1700,1950), animate=TRUE),
-      
-      #response threshold setting
-      numericInput("threshold", label="Response Threshold", value=2.5), 
-      
-      #grouping rows together options
-      selectizeInput('g1', 'Group 1', choices = rows, multiple = TRUE),
-      selectizeInput('g2', 'Group 2', choices = rows, multiple = TRUE),
-      selectizeInput('g3', 'Group 3', choices = rows, multiple = TRUE),
-      checkboxInput("group", label="Group Rows (check after selecting groups)", value = FALSE)
-      
-      
+             # select what rows to average
+             selectInput("row", label="Row Selection", choice = list("Row A" = 'A', "Row B" = 'B', "Row C" = 'C', "Row D" = 'D', "Row E" = 'E', "Row F" = 'F', "Row G" = 'G', "Row H" = 'H')),
+             
+             #adjust Plot_A axis
+             sliderInput("xaxis", label=("Adjust Activity Plot Axis"), min=10, max=1950, value = c(1700,1950), animate=TRUE)
+                      
+      ),
+      conditionalPanel(
+        condition="input.conditionedPanels == 'Startle Responses'",
+        #response threshold setting
+        numericInput("threshold", label="Response Threshold", value=2.5),
+        #grouping rows together options
+        selectizeInput('g1', 'Group 1', choices = rows, multiple = TRUE),
+        selectizeInput('g2', 'Group 2', choices = rows, multiple = TRUE),
+        selectizeInput('g3', 'Group 3', choices = rows, multiple = TRUE),
+        checkboxInput("group", label="Group Rows (check after selecting groups)", value = FALSE)
+        
+      )
       
       
     ),
@@ -73,7 +80,8 @@ shinyUI(fluidPage(
         
         tabPanel("Results Table", downloadButton('downloadData', "Download Data"), dataTableOutput(outputId="ind_table")
         ),
-        tabPanel("changelog", uiOutput("changelog"))
+        tabPanel("changelog", uiOutput("changelog")),
+        id = "conditionedPanels"
       )
       
     )
