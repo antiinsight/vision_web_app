@@ -27,6 +27,7 @@ shinyServer(function(input, output) {
     inData <- input$data
     threshold <- input$threshold
     inSample <- input$sample
+    inPlateNum <- input$plateSelect
     
     # creates a progress bar to show the user its doing something in the background
     withProgress(message = "Rendering Plot... Please Wait", value = 0, {
@@ -96,7 +97,7 @@ shinyServer(function(input, output) {
     threshold <- input$threshold
     inGroup <- input$group
     inSample <- input$sample
-#    inPlateNum <- input$plateSelect
+    inPlateNum <- input$plateSelect
     
     # make sure uploaded file is not NULL, prevents errors, only if using user data
     if (inSample == FALSE){
@@ -112,13 +113,6 @@ shinyServer(function(input, output) {
     }
     if (inSample == TRUE){
       rawdata <- read.delim("www/sampleData.XLS", sep="\t", header = TRUE)
-    }
-    
-    # determine if this rawdata is from a 96 well plate or a 48 well plate
-    if (rawdata[96,1] == 'w096'){
-      inPlateNum <- 96
-    } else if (rawdata[96,1] == 'w048'){
-      inPlateNum <- 48
     }
     
     # this line of code exists to fix a bug in the viewpoint software which causes randomy wells to be "measured" after
@@ -433,7 +427,7 @@ shinyServer(function(input, output) {
     threshold <- input$threshold
     individual <- input$individual
     inSample <- input$sample
-#    inPlateNum <- input$plateSelect
+    inPlateNum <- input$plateSelect
     
     # make sure uploaded file is not NULL; prevents errors, but only if Sample Data is not being used
     if (inSample == FALSE){
@@ -452,14 +446,6 @@ shinyServer(function(input, output) {
       if (inSample == TRUE){
         rawdata <- read.delim("www/sampleData.XLS", sep="\t", header = TRUE)
       }
-      
-      # determine if this rawdata is from a 96 well plate or a 48 well plate
-      if (rawdata[96,1] == 'w096'){
-        inPlateNum <- 96
-      } else if (rawdata[96,1] == 'w048'){
-        inPlateNum <- 48
-      }
-      
       
       # this line of code exists to fix a bug in the viewpoint software which causes randomy wells to be "measured" after
       # the recording stop time 
