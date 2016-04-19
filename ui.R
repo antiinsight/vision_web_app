@@ -33,7 +33,7 @@ shinyUI(fluidPage(
       checkboxInput("sample", label="Demo with Sample Data", value = FALSE),
       
       # radio button to select 96 or 48 well plates
-      radioButtons("plateSelect", label="Select Plate Size", choices = list("96 wells" = 96, "48 wells" = 48), selected = 96),
+      #radioButtons("plateSelect", label="Select Plate Size", choices = list("96 wells" = 96, "48 wells" = 48), selected = 96),
       
       # upload Zebrabox spreadsheet
       fileInput('file', label=h4("Select Zebrabox Spreadsheet"), multiple=FALSE),
