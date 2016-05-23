@@ -249,3 +249,4 @@ vignettes/*.pdf
 
 # Shiny connect files
 rsconnect/
+.Rproj.user
