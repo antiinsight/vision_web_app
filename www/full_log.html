@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>VIZN - changelog</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  
+  <body>
+    <a href="https://anthony-scott.shinyapps.io/vision_web_app/">Go Back</a><br><br>
+    <h2>2016-04-19</h2>
+    <ul>
+      <li>VIZN can now AUTO-DETECT if you are using a 96 or 48 well plate. You no longer have to select which one.</li>
+    </ul>
+    <hr>
+    <h2>2016-04-12</h2>
+    <ul>
+      <li>Sidebar controls now only display the controls needed for the specific tab panel open. This should simpify the UI.</li>
+    </ul>
+    <hr>
+    <h2>2016-03-21</h2>
+    <ul>
+      <li>Updated citation to include link to the published article.</li>
+      <li>Small edits in the intro instructions</li>
+      <li>Added GitHub link</li>
+    </ul>
+    <hr>
+    <h2>2016-03-07</h2>
+    <ul>
+      <li>48-well plates can now be analyzed</li>
+    </ul>
+    <hr>
+    <h2>2016-03-01</h2>
+    <ul>
+      <li>Added current citation to into tab</li>
+    </ul>
+    <h2>2015-12-22</h2>
+    <ul>
+      <li>Added a table on the activity plot tab that shows the start and stop times of the zebrabox run</li>
+    </ul>
+    <hr>
+    <h2>2015-12-17</h2>
+    <ul>
+      <li>Did some cleanup of code under the hood</li>
+    </ul>
+    <hr>
+    <h2>2015-12-14</h2>
+    <ul>
+      <li>Fixed p-value table accidently broken in previous update</li>
+    </ul>
+    <hr>
+    <h2>2015-12-10</h2>
+    <ul>
+      <li>Changed filename of downloaded table to something more meaningful that 'test.csv'</li>
+    </ul>
+    <hr>
+    <h2>2015-12-3</h2>
+    <ul>
+      <li>Added instructions tab and set the default page to it</li>
+      <li>Changed some minor CSS styling</li>
+      <li>Remanmed Individual Fish tab to Results Table</li>
+    </ul>
+    <hr>
+    <h2>2015-12-2</h2>
+    <ul>
+      <li>Added the ability to demo the software with sample data. Check box on top of user controls</li>
+    </ul>
+    <hr>
+    <h2>2015-11-18</h2>
+    <ul>
+      <li>Increased size of progress indicator bar to make it more noticable</li>
+    </ul>
+    <hr>
+    <h2>2015-11-16</h2>
+    <ul>
+      <li>Added a progress indicator on each tab while processing is going on in the backgroud.</li>
+    </ul>
+    <hr>
+    <h2>2015-11-12</h2>
+    <ul>
+      <li>Removed the normalize button from the UI. Software still normalizes automatically</li>
+      <li>Added a table on individual fish tab to display VSR for every fish on the plate. "NA"" indicates an empty well or fish didnt move during the experiment</li>
+      <li>Added a download button on the individual fish tab to directly download the table as a spreadsheet</li>
+      <li>Removed the bar graph of individual fish. The table is more informative</li>
+    </ul>
+    <hr>
+    <h2>2015-11-3</h2>
+    <ul>
+      <li>Added HTML head, title tags to UI</li>
+      <li>Fixed 2015-10-21 issue. Table now works if less than 12 fish are present.
+        <ul><li><s>Known Issue: This table does not show which well was the non-moving fish and responses cannot be linked back to fish's location on the plate if less than 12 are present.</s></li></ul>
+        </li>
+    </ul>
+    <hr>
+      <h2>2015-10-22</h2>
+      <ul>
+        <li>Added the changelog to the application</li>
+      </ul>
+    <hr>
+      <h2>2015-10-21</h2>
+      <ul>
+        <li>Added a table that displays values for individual fish responses below the graph
+          <ul>
+            <li><s>Known Issue: The table throws errors if 12 fish are not present in the selected row</s></li>
+          </ul></li>
+        <li>Changed the default response threshold to 2.5 (used to be 3)</li>
+      </ul>
+    <hr>
+
+  </body>
+</html>
