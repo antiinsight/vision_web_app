@@ -119,7 +119,13 @@ shinyServer(function(input, output) {
       inPlateNum <- 96
     } else if (rawdata[96,1] == 'w048'){
       inPlateNum <- 48
+    } else {
+      inPlateNum <- 0
     }
+    
+    validate(
+      need(inPlateNum == 96 || inPlateNum == 48, "Your spreadsheet has an incorrect number of rows. There is nothing more I can do.")
+      )
     
     # this line of code exists to fix a bug in the viewpoint software which causes randomy wells to be "measured" after
     # the recording stop time 
