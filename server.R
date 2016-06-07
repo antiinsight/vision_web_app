@@ -124,7 +124,7 @@ shinyServer(function(input, output) {
     }
     
     validate(
-      need(inPlateNum == 96 || inPlateNum == 48, "Your spreadsheet has an incorrect number of rows. There is nothing more I can do.")
+      need(inPlateNum == 96 || inPlateNum == 48, "I cannot determine if your plate has 96 or 48 wells. This is likely because your spreadsheet has an incorrect number of rows. There is nothing else I can do. Sorry!")
       )
     
     # this line of code exists to fix a bug in the viewpoint software which causes randomy wells to be "measured" after
