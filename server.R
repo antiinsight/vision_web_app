@@ -130,11 +130,19 @@ shinyServer(function(input, output) {
     # this line of code exists to fix a bug in the viewpoint software which causes randomy wells to be "measured" after
     # the recording stop time 
     rawdata <- subset(rawdata, rawdata$end <= 1950)
+    rowNumSuccess<-FALSE
     
     if (inPlateNum == 96){
       rawdata$wellnum <- 1:96
     } else if (inPlateNum == 48 ){
-      rawdata$wellnum <- 1:48
+      ## TODO Catch error here if incorrect number of rows and display error message
+      tryCatch({
+        rawdata$wellnum <- 1:48
+        rowNumSuccess <- TRUE
+        
+      }, error = validate(
+        need(rowNumSuccess, "Your plate has an incorrect number of rows. There is nothing more I can do. Sorry!" ))
+      )
     }
     
     # needed variables for time, originally were input by user, but hard-coding these creates a cleaner UI
