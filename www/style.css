@@ -22,6 +22,11 @@ tfoot {
     margin: 0px;
 }
 
+.shiny-output-error-validation {
+    color: #9E0000;
+    font-size: 20px;
+}
+
 header, section{
   border: 0px solid grey;
   margin: 5px;
