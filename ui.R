@@ -14,7 +14,6 @@ library(shiny)
 rows <- c("A", "B", "C", "D", "E", "F", "G", "H")
 
 shinyUI(fluidPage(
-  
   includeCSS("www/style.css"),
   
   tags$head(
