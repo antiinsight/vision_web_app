@@ -250,3 +250,4 @@ vignettes/*.pdf
 # Shiny connect files
 rsconnect/
 .Rproj.user
+holder.R

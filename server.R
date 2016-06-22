@@ -134,15 +134,11 @@ shinyServer(function(input, output) {
     
     if (inPlateNum == 96){
       rawdata$wellnum <- 1:96
-    } else if (inPlateNum == 48 ){
       ## TODO Catch error here if incorrect number of rows and display error message
-      tryCatch({
-        rawdata$wellnum <- 1:48
-        rowNumSuccess <- TRUE
-        
-      }, error = validate(
-        need(rowNumSuccess, "Your plate has an incorrect number of rows. There is nothing more I can do. Sorry!" ))
-      )
+      
+    } else if (inPlateNum == 48 ){
+      rawdata$wellnum <- 1:48
+      ## TODO Catch error here if incorrect number of rows and display error message
     }
     
     # needed variables for time, originally were input by user, but hard-coding these creates a cleaner UI
