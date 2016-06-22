@@ -134,6 +134,8 @@ shinyServer(function(input, output) {
     
     if (inPlateNum == 96){
       rawdata$wellnum <- 1:96
+      ## TODO Catch error here if incorrect number of rows and display error message
+      
     } else if (inPlateNum == 48 ){
       rawdata$wellnum <- 1:48
       ## TODO Catch error here if incorrect number of rows and display error message
