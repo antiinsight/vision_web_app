@@ -137,8 +137,18 @@ shinyServer(function(input, output) {
       ## TODO Catch error here if incorrect number of rows and display error message
       
     } else if (inPlateNum == 48 ){
-      rawdata$wellnum <- 1:48
-      ## TODO Catch error here if incorrect number of rows and display error message
+      tryCatch({
+        rawdata$wellnum <- 1:48
+        rowNumSuccess <- TRUE
+        
+      }, error = function(cond){
+        message("I failed")
+        validate(
+          need(rowNumSuccess == TRUE, "I have detected your plate has 48 wells, but your spreadsheet does not have the correct number of rows (a multiple of 48). There is nothing else I can do. Sorry!")
+        )
+        return(NA)
+      }
+      )
     }
     
     # needed variables for time, originally were input by user, but hard-coding these creates a cleaner UI
