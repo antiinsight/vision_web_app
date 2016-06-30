@@ -737,13 +737,6 @@ shinyServer(function(input, output) {
     
   }, options = list(dom = 't'))
   
-  
-  
-  
-  
-  
-  
-  
 })
 
 

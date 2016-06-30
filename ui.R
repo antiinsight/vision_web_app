@@ -60,8 +60,6 @@ shinyUI(fluidPage(
         checkboxInput("group", label="Group Rows (check after selecting groups)", value = FALSE)
         
       )
-      
-      
     ),
     
     mainPanel(
