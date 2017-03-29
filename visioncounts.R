@@ -18,7 +18,7 @@ visioncounts_perwell <- function(a, rawdata, t1, t2, t3,t4, t5, threshold)
   timepoints <- Activity_AVG[,2]
   norm_avg <- mean(timepoints)
   
-  ## return 0 if well is empty, this prevents errors later in this function
+  ## return NULL if well is empty, this prevents errors later in this function
   if (norm_avg == 0)
   {
     return(NULL)
