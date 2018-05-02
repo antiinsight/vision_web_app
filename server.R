@@ -115,9 +115,9 @@ shinyServer(function(input, output) {
     }
     
     # determine if this rawdata is from a 96 well plate or a 48 well plate
-    if (rawdata[96,1] == 'w096'){
+    if (rawdata[96,1] == 'w096' | rawdata[96,1] == 'c1-096'){
       inPlateNum <- 96
-    } else if (rawdata[96,1] == 'w048'){
+    } else if (rawdata[96,1] == 'w048' | rawdata[96,1] == 'c1-048'){
       inPlateNum <- 48
     } else {
       inPlateNum <- 0
