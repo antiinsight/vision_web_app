@@ -14,7 +14,7 @@ source("visioncounts.R")
 
 
 #allow for a 35Mb raw data spreadsheet to be uploaded, this can be increased as needed
-options(shiny.maxRequestSize = 40*1024^2)
+options(shiny.maxRequestSize = 70*1024^2)
 
 shinyServer(function(input, output) {
   
@@ -115,9 +115,9 @@ shinyServer(function(input, output) {
     }
     
     # determine if this rawdata is from a 96 well plate or a 48 well plate
-    if (rawdata[96,1] == 'w096' | rawdata[96,1] == 'c1-096'){
+    if (rawdata[96,1] == 'w096' | rawdata[96,1] == 'c1-096' | rawdata[96,1] == 'c096'){
       inPlateNum <- 96
-    } else if (rawdata[96,1] == 'w048' | rawdata[96,1] == 'c1-048'){
+    } else if (rawdata[96,1] == 'w048' | rawdata[96,1] == 'c1-048' | rawdata[96,1] == 'c048'){
       inPlateNum <- 48
     } else {
       inPlateNum <- 0
