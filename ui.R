@@ -19,7 +19,8 @@ shinyUI(fluidPage(
   tags$head(
     tags$title('VIZN - Visual Interrogation of Zebrafish maNipulations')
   ),
-  tags$head(includeScript("www/tracking.js")),
+  tags$head(includeHTML("www/tracking1.html")),
+  tags$head(includeScript("www/tracking2.js")),
   
   # Application title
   titlePanel(
